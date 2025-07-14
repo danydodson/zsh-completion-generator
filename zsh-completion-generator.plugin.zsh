@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 
 # date +%H:%M:%S.%N   # profiling info
 # Parse getopt-style help texts for options
@@ -7,7 +7,7 @@
 
 # Fetch $0 according to plugin standard proposed at:
 # http://zdharma.org/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html
-0="${${ZERO:-${0:#$ZSH_ARGZERO}}:-${(%):-%N}}"
+0="${${ZERO:-${0#$ZSH_ARGZERO}}:-${(%):-%N}}"
 ZSH_COMPLETION_GENERATOR_SRCDIR=${0:A:h}
 
 if [ -z $GENCOMPL_FPATH ]; then
@@ -83,4 +83,5 @@ gencomp() {
                     "\nThe program reacted with exit code: $code."
             )
 }
+
 # date +%H:%M:%S.%N   # profiling info
